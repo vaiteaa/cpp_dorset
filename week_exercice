@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string> 
+#include <iomanip>
+using namespace std;
+
+int main() {
+  string day;
+  cin>>day;
+  if (day=="saturday"||day=="sunday"){cout<<"week off";}
+  else if (day=="monday"||day=="tuesday"||day=="wednesday"||day=="thursday"||day=="friday") {cout<<"working day";}
+  else{cout<<"error not a weekday";}
+  return 0;
+}
