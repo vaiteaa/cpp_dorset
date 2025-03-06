@@ -1,0 +1,72 @@
+#include <iostream>
+using namespace std;
+
+  //FUNCTION OVERLOADING
+    int add(int a) {
+      int b= a+5;
+    return b;
+    } 
+    
+    int add(int a, int b){
+      int c=a+b;
+      return c;
+    }
+    
+  //INLINE FUNCTION  
+    inline int multiply(int a, int b) {
+    return a * b;
+    }
+    
+  //INSIDE CLASS
+  class Math1 {
+    public:
+      inline int sub1(int a, int b) {
+      return a - b;
+      }
+  };
+
+  //OUTSIDE CLASS
+  //class Math2 {
+    //public:
+      //int sub2(int a,int b); 
+  //};
+  
+  //inline int::sub2(int a,int b) {
+  //return a - b;
+  
+  //RECURSIVE FUNCTION
+  int fibo(int n){
+    if (n==0) {return 0;}
+    else if(n==1){return 1;}
+    else {return fibo(n-1)+fibo(n-2);}
+  }
+    
+  //CLASS and FRIEND FUNCTION
+  class Calc{
+    private:
+      int value;
+    public:
+      Calc(int v){
+      value=v ;}
+      friend void getvalue(Calc c);
+  };
+  
+  void getvalue(Calc c){
+    cout<<c.value;
+  }
+  
+int main() 
+{  
+  
+    //cout<< add(5) <<" "<< add(5,1)<< endl;
+    
+    //int result = multiply(4, 5); // Function call to inline function
+    //cout << "The result of multiplication is: " << result << endl;
+    
+    //cout<< fibo(2) << endl;
+    
+    Calc c(10);
+    getvalue(c);
+    
+    return 0;
+}
