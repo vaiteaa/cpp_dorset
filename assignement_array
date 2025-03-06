@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+//Display
+    void displayArray(int array[], int length) {
+    cout << "Array elements: ";  
+    for (int i=0; i<length; i++){
+      cout<<array[i]<<" "; };
+    } 
+//INSERT 
+    void insertElement(int array[], int length, int a, int position) {
+    for (int i=length; i>position; i--) {
+        array[i]=array[i - 1];
+      }
+    array[position]=a;
+    }
+//DELETE
+    void deleteElement(int array[], int length, int position) {
+    for (int i=position; i<length-1; i++) {
+        array[i] = array[i + 1];
+      }
+    }
+//SEARCH
+    void searchElement(int array[], int length, int a) {
+    for (int i=0; i<length; i++) {
+        if (array[i]==a) {
+            cout<<"Element is in index "<<i;
+        }
+      }
+    } 
+//UPDATE
+    void updateElement(int array[], int position, int a) {
+    array[position] = a;
+    }  
+    
+int main() 
+{  
+     int arr[6]={0,1,2,3,4,5};
+     int length=sizeof(arr)/sizeof(arr[0]);
+
+//1. Display the array elements.
+    displayArray(arr, length);    
+//2. Insert a new element at a specific position in the array.
+    insertElement(arr, length, 10, 0); 
+//3. Delete an element from a given position.
+    deleteElement(arr, length, 2);
+//4. Search for an element in the array and display its index if found.
+    searchElement(arr, length, 3);
+//5. Update an element at a specific position with a new value.
+    updateElement(arr, 1, 11);
+    
+    //see the new array
+    displayArray(arr, length);
+    return 0;
+}
