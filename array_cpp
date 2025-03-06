@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{   
+   //ARRAY 1 DIMENSION
+    int arr[6]={2,4,8,3,1};
+    cout << arr[0];
+    cout<<"\n";
+    arr[5]=5;
+    cout<<arr[5];
+    cout<<"\n";
+    int length=sizeof(arr)/sizeof(arr[0]);
+    for (int i=0;i<length;i++){
+      cout<<arr[i]<<" "; }
+    
+    //ARRAY PRINT W/ LOOP
+    int arr1[] = {10, 20, 30, 40, 50};
+    cout << "Size of entire array: " << sizeof(arr1) << "bytes" << endl;
+    cout << "Size of one element: " << sizeof(arr1[0]) << "bytes" << endl;
+    int length1 = sizeof(arr1) / sizeof(arr1[0]);
+    cout << "Number of elements in array: " << length1 << endl;
+    
+    //MATRIX
+    int arr2[3][3]={{0,1,2},{3,4,5}};
+    int rows = sizeof(arr2[0]) / sizeof(arr2[0][0]);
+    int cols = sizeof(arr2[0]) / sizeof(arr2[0][0]);
+    for (int j = 0; j < rows; j++) {
+      for (int k = 0; k < cols; k++) {
+        cout << arr2[j][k] << " "; }
+      cout << endl; }
+    
+    return 0;
+}
