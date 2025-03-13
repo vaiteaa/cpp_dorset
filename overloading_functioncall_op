@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+//Function Call Operator Overloading (() Operator):
+class Multiply {
+public:
+    int operator()(int a, int b) {
+        return a * b;
+    }
+};
+    
+int main() {
+    Multiply multiply;
+    cout << "Product : " << multiply(2, 5);
+    return 0;
+}
