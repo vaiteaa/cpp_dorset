@@ -1,0 +1,28 @@
+include <iostream>
+using namespace std;
+//Arrow Operator Overloading (-> Operator):
+class Test {
+public:
+    void show() { cout << "Test class funcgion was called.\n"; }
+};
+
+class SmartPointer {
+private:
+    Test *ptr;
+public:
+    SmartPointer(Test *p = nullptr) { 
+        ptr = p; 
+    }
+    ~SmartPointer() { 
+        delete ptr; 
+    }
+    Test* operator->() { 
+        return ptr; 
+    }
+};
+    
+int main() {
+    SmartPointer sp(new Test());
+    sp->show();
+    return 0;
+}
