@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+//Unary Operator Overloading
+
+class Counter {
+  private:
+    int count;
+  public:
+    Counter() : count(0){}
+
+    // Overloading prefix ++ operator
+    Counter& operator++() {
+        ++count;
+        return *this;
+    }
+
+    // Overloading postfix ++ operator
+    Counter operator++(int) {
+        Counter temp = *this; 
+        count++;
+        return temp;
+    }
+
+    void display() {
+        cout << "Counter: " << count;
+    }
+};
+
+int main() 
+{
+    Counter c;
+    c.display();
+    ++c;
+    c.display();
+    c++;
+    c.display();
+    
+    return 0;
+}
