@@ -1,0 +1,126 @@
+#include <iostream>
+using namespace std;
+//INHERITANCE
+
+// SINGLE INHERITANCE
+class Person {
+  public:
+    void introduce() {
+        cout << "I am a person"<<endl;
+    }
+};
+
+class Student : public Person {
+  public:
+    void study() {
+        cout << "I am also a student"<<endl;
+    }
+};
+
+//MULTIPLE INHERITANCE
+class Fly {
+public:
+    void flying() {
+        cout << "Flying"<<endl;
+    }
+};
+
+class Vehicle {
+public:
+    void drive() {
+        cout << "Driving"<<endl;
+    }
+};
+
+class FlyingCar : public Fly, public Vehicle {
+public:
+    void flyAndDrive() {
+        flying();
+        drive();
+    }
+};
+
+
+//HIERARCAL INHERITANCE
+class Shape{
+  public:
+  void draw(){
+    cout<<"Drawing a shape"<<endl;
+  }
+};
+
+class Circle: public Shape{
+  public:
+  void drawCircle(){
+    cout<<"Its a circle"<<endl;
+  }
+};
+
+class Rectangle: public Shape{
+  public:
+  void drawRectangle(){
+    cout<<"Its a rectangle"<<endl;
+  }
+};
+
+//MUTILEVEL INHERITANCE
+//HYBRID INHERITANCE
+class Animal {
+public:
+    void eat() {
+        cout << "Eating"<<endl;
+    }
+};
+
+
+class Mammal : virtual public Animal {
+public:
+    void walk() {
+        cout << "Walking"<<endl;
+    }
+};
+
+
+class Bird : virtual public Animal {
+public:
+    void chirp() {
+        cout << "Chirping"<<endl;
+    }
+};
+
+
+class Bat : public Mammal, public Bird {
+public:
+    void fly() {
+        cout << "Flying"<<endl;
+    }
+};
+
+int main() {
+  // SINGLE INHERITANCE
+    Student s;
+    s.introduce(); 
+    s.study(); 
+    
+  // MULTIPLE INHERITANCE
+    FlyingCar fcar;
+    fcar.flyAndDrive();
+    
+  //HIERARCAL INHERITANCE
+    Circle c;
+    c.draw();
+    c.drawCircle();
+    Rectangle r;
+    r.draw();
+    r.drawRectangle();
+    
+  //MUTILEVEL INHERITANCE
+  //HYBRID INHERITANCE
+    Bat bat;
+    bat.eat();   
+    bat.walk();  
+    bat.chirp(); 
+    bat.fly();   
+
+    return 0;
+}
